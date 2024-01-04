@@ -1,0 +1,39 @@
+.container div{
+    height: 350px;
+    width: 250px;
+    border: 1px solid red;
+    float: right;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    background-color: white;
+    border-radius: 8px;
+    
+}
+
+.container{
+    width: 80%;
+    margin-left: 6%;
+    margin-top: 5%;
+}
+
+.elso{
+    margin-left: 0;
+}
+
+body{
+    background-image:  url("poker-table-background-green-color_47243-1067.avif");
+    background-size: cover;
+}
+
+ .p{
+    font-size: 2rem;
+    color: goldenrod;
+    
+}
+
+.card img{
+    height: 350px;
+    width: 250px;
+    border-radius: 8px;
+    display: none;
+}
