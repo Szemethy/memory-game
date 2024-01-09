@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memóriakártya Játék</title>
+
+    <h1>
+        A Játék újrakezdéséhez nyomja meg az 'ENTER' gombot!
+    </h1>
+    <style>
+        .card {
+            width: 80px;
+            height: 80px;
+            margin: 5px;
+            text-align: center;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #ddd;
+            border: 1px solid #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="game-board"></div>
+
+<script>
+
+    function Enter(event){
+        if(event.key == 'Enter'){
+            window.location.reload();
+        }
+    }
+
+    const cards = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+    let flippedCards = [];
+    let matchedCards = [];
+
+    function shuffle(array) {
+        let currentIndex = array.length, randomIndex;
+
+        while (currentIndex !== 0) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+        }
+
+        return array;
+    }
+
+    function createGameBoard() {
+        const shuffledCards = shuffle(cards);
+        const gameBoard = document.getElementById('game-board');
+
+        for (let i = 0; i < shuffledCards.length; i++) {
+            const card = document.createElement('div');
+            card.classList.add('card');
+            card.dataset.value = shuffledCards[i];
+            card.addEventListener('click', flipCard);
+            gameBoard.appendChild(card);
+        }
+    }
+
+    function flipCard() {
+        const card = this;
+
+        if (flippedCards.length < 2 && !flippedCards.includes(card)) {
+            card.textContent = card.dataset.value;
+            flippedCards.push(card);
+
+            if (flippedCards.length === 2) {
+                setTimeout(checkMatch, 500);
+            }
+        }
+    }
+
+    function checkMatch() {
+        const [card1, card2] = flippedCards;
+
+        if (card1.dataset.value === card2.dataset.value) {
+            matchedCards.push(card1, card2);
+            if (matchedCards.length === cards.length) {
+                alert('Gratulálok! Nyertél!');
+            }
+        } else {
+            card1.textContent = '';
+            card2.textContent = '';
+        }
+
+        flippedCards = [];
+    }
+
+    createGameBoard();
+    window.addEventListener('keydown', Enter);
+</script>
+
+</body>
+</html>
