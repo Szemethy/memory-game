@@ -1,39 +1,65 @@
-.container div{
-    height: 350px;
+.card {
     width: 250px;
-    border: 1px solid red;
-    float: right;
-    margin-left: 2%;
-    margin-bottom: 2%;
-    background-color: white;
+    height: 350px;
+    margin: 5px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #ddd;
+    border: 1px solid #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    border: solid 1px red;
     border-radius: 8px;
-    
-}
-
-.container{
-    width: 80%;
-    margin-left: 6%;
-    margin-top: 5%;
-}
-
-.elso{
-    margin-left: 0;
+    float: left;
 }
 
 body{
-    background-image:  url("poker-table-background-green-color_47243-1067.avif");
-    background-size: cover;
+    background-image: url("poker-table-background-green-color_47243-1067.avif");
+    background-size: cover
 }
 
- .p{
-    font-size: 2rem;
-    color: goldenrod;
+img{
+    height: 350px;
+    width: 250px;
+    border: none;
+    border-radius: 8px;
     
 }
 
-.img{
-    height: 350px;
-    width: 250px;
-    border-radius: 8px;
-    display: none;
+#game-board{
+    width: 90%;
+    margin-left: 8%;
+}
+
+button{
+    margin-top: 2%;
+    margin-left: 37.2%;
+    border-radius: 6px;
+    padding: 35px;
+    font-size: 1rem;
+    font-weight: bolder;
+    background-color: rgb(223, 65, 65);
+    color: white;
+    text-shadow: 2px 2px black;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0);
+}
+
+.card{
+    margin-left: 3%;
+    margin-top: 2%;
+}
+
+@font-face{
+    font-family: TheBlacklist;
+    src: url('TheBlacklist.woff');
+}
+
+h1{
+   font-family: TheBlacklist;
+   font-size: 5rem;
+   color: white;
+   text-align: center;
 }

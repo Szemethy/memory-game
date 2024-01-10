@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Memóriakártya Játék</title>
+
+    <h1>
+        Jedlik memóriajáték
+    </h1>
+
+    <div><select onchange="valasztas()" id="mod">
+    <option value="">Válassz játékmódot!</option>
+    <option id="option1" value="normal">Normál mód</option>
+    <option id="option2" value="jedlik">Jedlik mód</option>
+
+</select></div>
+</head>
+<body>
+
+<div id="game-board"></div>
+
+<div id="game-board2"></div>
+
+<button type="button" id="myBtn" onclick="javascript:Enter()">
+    A Játék újrakezdéséhez nyomja meg az 'ENTER' gombot!
+</button>
+
+<script src="script.js"></script>
+<script src="jedlik.js"></script>
+<script src="normal.js"></script>
+
+
+</body>
+</html>
