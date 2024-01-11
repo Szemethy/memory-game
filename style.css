@@ -32,11 +32,17 @@ img{
 #game-board{
     width: 90%;
     margin-left: 8%;
+    display: none;
 }
 
+#game-board2{
+    width: 90%;
+    margin-left: 8%;
+    display: none;
+}
+
+
 button{
-    margin-top: 2%;
-    margin-left: 37.2%;
     border-radius: 6px;
     padding: 35px;
     font-size: 1rem;
@@ -46,6 +52,13 @@ button{
     text-shadow: 2px 2px black;
     box-shadow: 5px 5px 5px rgb(0, 0, 0);
 }
+
+#gomb{
+    margin-left: 36.3%;
+    margin-top: 2%;
+    display: none;
+}
+
 
 .card{
     margin-left: 3%;
@@ -61,5 +74,32 @@ h1{
    font-family: TheBlacklist;
    font-size: 5rem;
    color: white;
-   text-align: center;
+   margin: auto;
+   width: 30%;
+   padding: 1%;
+   border-radius: 8px;
+}
+
+#choose{
+    background-color: rgb(70, 153, 81);
+    padding: 1%;
+    border: solid 1px rgb(255, 255, 255);
+    border-radius: 8px;
+    width: 10%;
+    margin: auto;
+    border-radius: 8px;
+
+}
+
+#mod{
+    background-color: rgb(70, 153, 81);
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 5%;
+ 
+}
+
+.szoveg{
+    font-weight: bold;
 }

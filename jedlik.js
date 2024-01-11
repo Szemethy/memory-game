@@ -34,7 +34,7 @@ function createGameBoard() {
         const card = document.createElement('div');
         card.classList.add('card');
         const img = document.createElement('img');
-        img.src = 'images/hatlap.webp';
+        img.src = 'images/modos.webp';
         img.classList.add('hidden');
         card.appendChild(img);
 
@@ -69,8 +69,8 @@ function checkMatch() {
             alert('Gratulálok! Nyertél!');
         }
     } else {
-        img1.src = 'images/hatlap.webp';
-        img2.src = 'images/hatlap.webp';
+        img1.src = 'images/modos.webp';
+        img2.src = 'images/modos.webp';
     }
 
     flippedCards = [];
