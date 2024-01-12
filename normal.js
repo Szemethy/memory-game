@@ -1,81 +1,78 @@
-// const images = [
-//     'kep1.jpg',
-//     'kep2.jpg',
-//     'kep3.jpg',
-//     'kep4.jpg',
-//     'kep5.jpg',
+const myImages = [
+    'magus.gif',
+    'boszi.gif',
+    'sarkany.gif',
+    'pegasus.gif',
+    'phoneix.gif',
+];
 
-// ]
+let myCards = ['magus.gif', 'magus.gif', 'boszi.gif','boszi.gif', 'sarkany.gif', 'sarkany.gif', 'pegasus.gif', 'pegasus.gif', 'phoneix.gif', 'phoneix.gif'];
+myCards = shuffle(myCards);
 
-// let cards = ['kep1.jpg','kep1.jpg','kep2.jpg','kep2.jpg','kep3.jpg','kep3.jpg', 'kep4.jpg','kep4.jpg', 'kep5.jpg','kep5.jpg'];
-// cards = shuffle(cards);
+let flippedMyCards = [];
+let matchedMyCards = [];
 
-// let flippedCards = [];
-// let matchedCards = [];
+function myShuffle(array) {
+    let currentIndex = array.length, randomIndex;
 
-// function shuffle(array) {
-//     let currentIndex = array.length, randomIndex;
+    while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
 
-//     while (currentIndex !== 0) {
-//         randomIndex = Math.floor(Math.random() * currentIndex);
-//         currentIndex--;
+        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    }
 
-//         [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-//     }
+    return array;
+}
 
-//     return array;
-// }
+function createMyGameBoard() {
 
-// function createGameBoard() {
+    const myGameBoard = document.getElementById('game-board2');
 
-//     const gameBoard = document.getElementById('game-board');
+    for (let i = 0; i < myCards.length; i++) {
+        const myCard = document.createElement('div');
+        myCard.classList.add('card');
+        const myImg = document.createElement('img');
+        myImg.src = 'images/hatlap.webp';
+        myImg.classList.add('hidden2');
+        myCard.appendChild(myImg);
 
-//     for (let i = 0; i < cards.length; i++) {
-//         const card = document.createElement('div');
-//         card.classList.add('card');
-//         const img = document.createElement('img');
-//         img.src = 'images/hatlap.webp';
-//         img.classList.add('hidden');
-//         card.appendChild(img);
+        myCard.dataset.value = myCards[i];
+        myCard.addEventListener('click', flipMyCard);
+        myGameBoard.appendChild(myCard);
+    }
+}
 
-//         card.dataset.value = cards[i];
-//         card.addEventListener('click', flipCard);
-//         gameBoard.appendChild(card);
-//     }
-// }
+function flipMyCard() {
+    const myCard = this;
+    const myImg = myCard.querySelector('img');
 
-// function flipCard() {
-//     const card = this;
-//     const img = card.querySelector('img');
+    if (flippedMyCards.length < 2 && !flippedMyCards.includes(myCard)) {
+        myImg.src = 'images/' + myCard.dataset.value;
+        flippedMyCards.push(myCard);
 
-//     if (flippedCards.length < 2 && !flippedCards.includes(card)) {
-//         img.src = 'images/' + card.dataset.value;
-//         flippedCards.push(card);
+        if (flippedMyCards.length === 2) {
+            setTimeout(checkMyMatch, 1000);
+        }
+    }
+}
 
-//         if (flippedCards.length === 2) {
-//             setTimeout(checkMatch, 1000);
-//         }
-//     }
-// }
+function checkMyMatch() {
+    const [myCard1, myCard2] = flippedMyCards;
+    const myImg1 = myCard1.querySelector('img');
+    const myImg2 = myCard2.querySelector('img');
 
-// function checkMatch() {
-//     const [card1, card2] = flippedCards;
-//     const img1 = card1.querySelector('img');
-//     const img2 = card2.querySelector('img');
+    if (myCard1.dataset.value === myCard2.dataset.value) {
+        matchedMyCards.push(myCard1, myCard2);
+        if (matchedMyCards.length === myCards.length) {
+            alert('Gratulálok! Nyertél!');
+        }
+    } else {
+        myImg1.src = 'images/hatlap.webp';
+        myImg2.src = 'images/hatlap.webp';
+    }
 
-//     if (card1.dataset.value === card2.dataset.value) {
-//         matchedCards.push(card1, card2);
-//         if (matchedCards.length === cards.length) {
-//             alert('Gratulálok! Nyertél!');
-//         }
-//     } else {
-//         img1.src = 'images/hatlap.webp';
-//         img2.src = 'images/hatlap.webp';
-//     }
+    flippedMyCards = [];
+}
 
-//     flippedCards = [];
-// }
-
-
-
-// createGameBoard();
+createMyGameBoard();

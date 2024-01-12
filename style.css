@@ -36,9 +36,10 @@ img{
 }
 
 #game-board2{
-    width: 90%;
-    margin-left: 8%;
-    display: none;
+    width: 60%;
+    margin-left: 24%;
+    margin-top: 1.6%;
+    display: none;  
 }
 
 
@@ -54,7 +55,6 @@ button{
 }
 
 #gomb{
-    margin-left: 36.3%;
     margin-top: 2%;
     display: none;
 }
@@ -95,11 +95,28 @@ h1{
     background-color: rgb(70, 153, 81);
     border: none;
     color: white;
-    font-weight: bold;
+    font-weight: bold;  
     padding: 5%;
  
 }
 
 .szoveg{
     font-weight: bold;
+}
+
+
+
+option{
+    border-top: solid 1px white;
+}
+
+
+#game-board2 .card{
+    width: 150px;
+    height: 250px;
+}
+
+.hidden2{
+    height: 250px;
+    width: 150px;
 }

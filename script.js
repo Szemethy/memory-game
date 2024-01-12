@@ -8,8 +8,18 @@ function Enter(event){
 function valasztas(){
     modvalasztas = mod.value
     if (modvalasztas == 'normal'){
-        document.querySelector("#game-board").style.display = "none"
         document.querySelector("#game-board2").style.display = "block"
+        document.querySelector("#game-board").style.display = "none"
+        document.querySelector("#gomb").style.display = "block"
+        document.querySelector(".body").style.backgroundImage = "url('images/asztal.jpg')"
+
+
+
+
+        document.querySelector("#myBtn").style.backgroundColor = "rgb(223, 65, 65)"
+        document.querySelector("#myBtn").style.marginTop = "1.6%"
+        document.querySelector("#myBtn").style.marginLeft = "36.6%"
+
 
     }
      else if (modvalasztas == 'jedlik'){

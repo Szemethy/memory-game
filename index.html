@@ -10,12 +10,17 @@
         Jedlik memóriajáték
     </h1>
 
-    <div id="choose"><select onchange="valasztas()" id="mod">
-    <option class="szoveg" id="option" value="valasztas">Válassz játékmódot!</option>
-    <option class="szoveg" id="option1" value="normal">Normál mód</option>
-    <option class="szoveg" id="option2" value="jedlik">Jedlik mód(os)</option>
+<div id="choose">
+    <select onchange="valasztas()" id="mod">
+        <option class="szoveg" selected disabled hidden>Válassz játékmódot!</option>
+        <option value=""></option>
+        <option class="szoveg" id="option1" value="normal">Normál mód</option>
+        <option value=""></option>
+        <option class="szoveg" id="option2" value="jedlik">Jedlik mód(os)</option>
+        <option value=""></option>
+    </select>
+</div>
 
-</select></div>
 </head>
 <body class="body">
 
