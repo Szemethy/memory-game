@@ -66,7 +66,14 @@ function checkMatch() {
     if (card1.dataset.value === card2.dataset.value) {
         matchedCards.push(card1, card2);
         if (matchedCards.length === cards.length) {
-            alert('Gratulálok! Nyertél!');
+            document.getElementById("endtext2").style.display = 'block'
+            document.getElementById("game-board").style.display = 'none'
+            document.getElementById("gomb").style.display = 'none'
+            document.getElementById("choose").style.display = 'none'
+            document.getElementsByTagName('h2')[0].style.display = 'none'
+            document.querySelector(".body").style.backgroundImage = "url('images/jedlikhatter2.jpg')"
+            document.getElementById("monmod").style.display = 'block'
+
         }
     } else {
         img1.src = 'images/modos.webp';

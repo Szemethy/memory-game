@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html class="html" lang="en">
-<head>
+<head class="head">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Memóriakártya Játék</title>
 
-    <h1>
-        Jedlik memóriajáték
+
+<div class="container">  
+
+    <h1 id="endtext3">
+        Jedlik
     </h1>
+    <h1 id="endtext3" class="fasz">
+        memóriajáték
+    </h1>
+    
 
 <div id="choose">
     <select onchange="valasztas()" id="mod">
@@ -21,7 +28,32 @@
     </select>
 </div>
 
+</div>
+
+<h2>
+    Jedlik memóriajáték
+</h2>
+
+
 </head>
+
+
+<h3 id="endtext" class= "floating">
+    Gratulálunk, nyertél!
+    <br>
+    A játék újrakezdéséhez nyomja meg az 'Enter' gombot!
+</h3>
+
+<h3 id="endtext2" class= "floating2">
+    Gratulálunk, nyertél!
+    <br>
+    A játék újrakezdéséhez nyomja meg az 'Enter' gombot!
+</h3>
+
+<img id="monmod" src="images/monopolymodi.webp" alt="">
+
+
+
 <body class="body">
 
 <div id="game-board"></div>
@@ -30,7 +62,7 @@
 
 <div id="gomb">
 <button type="button" id="myBtn" onclick="javascript:Enter()">
-    A Játék újrakezdéséhez nyomja meg az 'ENTER' gombot!
+    A főoldalra kerüléshez nyomja meg az 'ENTER' gombot!
 </button>
 </div>
 

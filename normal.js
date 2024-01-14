@@ -65,7 +65,13 @@ function checkMyMatch() {
     if (myCard1.dataset.value === myCard2.dataset.value) {
         matchedMyCards.push(myCard1, myCard2);
         if (matchedMyCards.length === myCards.length) {
-            alert('Gratulálok! Nyertél!');
+            document.getElementById("endtext").style.display = 'block'
+            document.getElementById("game-board2").style.display = 'none'
+            document.getElementById("gomb").style.display = 'none'
+            document.getElementById("choose").style.display = 'none'
+            document.getElementsByTagName('h2')[0].style.display = 'none'
+            document.querySelector(".body").style.backgroundImage = "url('images/asztal2.jpg')"
+
         }
     } else {
         myImg1.src = 'images/hatlap.webp';
